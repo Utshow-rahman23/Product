@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <!-- Create the Product table -->
+    <changeSet id="create-product-table" author="utshow">
+        <createTable tableName="Product">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="TEXT"/>
+            <column name="sku" type="VARCHAR(255)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="price" type="DOUBLE"/>
+            <column name="quantity" type="INTEGER"/>
+            <column name="category" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <!-- Insert 20 dummy products -->
+    <changeSet id="insert-dummy-products" author="yourname">
+        <insert tableName="Product">
+            <column name="name" value="Laptop"/>
+            <column name="description" value="High-performance laptop for developers"/>
+            <column name="sku" value="LP12345"/>
+            <column name="price" valueNumeric="1200.99"/>
+            <column name="quantity" valueNumeric="50"/>
+            <column name="category" value="Electronics"/>
+        </insert>
+        <insert tableName="Product">
+            <column name="name" value="Smartphone"/>
+            <column name="description" value="Latest smartphone with advanced features"/>
+            <column name="sku" value="SP67890"/>
+            <column name="price" valueNumeric="800.50"/>
+            <column name="quantity" valueNumeric="100"/>
+            <column name="category" value="Electronics"/>
+        </insert>
+        <insert tableName="Product">
+            <column name="name" value="Headphones"/>
+            <column name="description" value="Noise-cancelling headphones for music lovers"/>
+            <column name="sku" value="HP54321"/>
+            <column name="price" valueNumeric="150.75"/>
+            <column name="quantity" valueNumeric="75"/>
+            <column name="category" value="Audio"/>
+        </insert>
+        <insert tableName="Product">
+            <column name="name" value="Keyboard"/>
+            <column name="description" value="Mechanical keyboard for gaming"/>
+            <column name="sku" value="KB98765"/>
+            <column name="price" valueNumeric="100.00"/>
+            <column name="quantity" valueNumeric="30"/>
+            <column name="category" value="Electronics"/>
+        </insert>
+        <insert tableName="Product">
+            <column name="name" value="Mouse"/>
+            <column name="description" value="Gaming mouse with RGB lighting"/>
+            <column name="sku" value="MS45678"/>
+            <column name="price" valueNumeric="50.00"/>
+            <column name="quantity" valueNumeric="40"/>
+            <column name="category" value="Electronics"/>
+        </insert>
+        <insert tableName="Product">
+            <column name="name" value="Monitor"/>
+            <column name="description" value="Ultra-wide monitor for productivity"/>
+            <column name="sku" value="MN34567"/>
+            <column name="price" valueNumeric="300.00"/>
+            <column name="quantity" valueNumeric="20"/>
+            <column name="category" value="Electronics"/>
+        </insert>
+        <insert tableName="Product">
+            <column name="name" value="Tablet"/>
+            <column name="description" value="Portable tablet for work and entertainment"/>
+            <column name="sku" value="TB87654"/>
+            <column name="price" valueNumeric="400.00"/>
+            <column name="quantity" valueNumeric="60"/>
+            <column name="category" value="Electronics"/>
+        </insert>
+        <insert tableName="Product">
+            <column name="name" value="Speaker"/>
+            <column name="description" value="Wireless speaker for home audio"/>
+            <column name="sku" value="SPK12345"/>
+            <column name="price" valueNumeric="80.00"/>
+            <column name="quantity" valueNumeric="80"/>
+            <column name="category" value="Audio"/>
+        </insert>
+        <insert tableName="Product">
+            <column name="name" value="Camera"/>
+            <column name="description" value="Professional DSLR camera for photography"/>
+            <column name="sku" value="CAM54321"/>
+            <column name="price" valueNumeric="1500.00"/>
+            <column name="quantity" valueNumeric="10"/>
+            <column name="category" value="Photography"/>
+        </insert>
+        <insert tableName="Product">
+            <column name="name" value="Tripod"/>
+            <column name="description" value="Sturdy tripod for cameras"/>
+            <column name="sku" value="TRP98765"/>
+            <column name="price" valueNumeric="50.00"/>
+            <column name="quantity" valueNumeric="20"/>
+            <column name="category" value="Photography"/>
+        </insert>
+        <insert tableName="Product">
+            <column name="name" value="Book"/>
+            <column name="description" value="Bestselling novel for readers"/>
+            <column name="sku" value="BK12345"/>
+            <column name="price" valueNumeric="15.00"/>
+            <column name="quantity" valueNumeric="150"/>
+            <column name="category" value="Books"/>
+        </insert>
+        <insert tableName="Product">
+            <column name="name" value="Pen"/>
+            <column name="description" value="Gel pen with smooth ink flow"/>
+            <column name="sku" value="PN67890"/>
+            <column name="price" valueNumeric="1.00"/>
+            <column name="quantity" valueNumeric="500"/>
+            <column name="category" value="Stationery"/>
+        </insert>
+        <insert tableName="Product">
+            <column name="name" value="Notebook"/>
+            <column name="description" value="Premium notebook for writing"/>
+            <column name="sku" value="NB98765"/>
+            <column name="price" valueNumeric="5.00"/>
+            <column name="quantity" valueNumeric="250"/>
+            <column name="category" value="Stationery"/>
+        </insert>
+        <insert tableName="Product">
+            <column name="name" value="Stapler"/>
+            <column name="description" value="Office stapler for binding documents"/>
+            <column name="sku" value="STP45678"/>
+            <column name="price" valueNumeric="3.00"/>
+            <column name="quantity" valueNumeric="100"/>
+            <column name="category" value="Stationery"/>
+        </insert>
+        <insert tableName="Product">
+            <column name="name" value="Eraser"/>
+            <column name="description" value="Soft rubber eraser for pencils"/>
+            <column name="sku" value="ER12345"/>
+            <column name="price" valueNumeric="0.50"/>
+            <column name="quantity" valueNumeric="300"/>
+            <column name="category" value="Stationery"/>
+        </insert>
+        <insert tableName="Product">
+            <column name="name" value="Calculator"/>
+            <column name="description" value="Basic calculator for office use"/>
+            <column name="sku" value="CAL67890"/>
+            <column name="price" valueNumeric="10.00"/>
+            <column name="quantity" valueNumeric="80"/>
+            <column name="category" value="Electronics"/>
+        </insert>
+        <insert tableName="Product">
+            <column name="name" value="Desk Lamp"/>
+            <column name="description" value="Energy-efficient desk lamp for reading"/>
+            <column name="sku" value="DL98765"/>
+            <column name="price" valueNumeric="20.00"/>
+            <column name="quantity" valueNumeric="120"/>
+            <column name="category" value="Home Decor"/>
+        </insert>
+        <insert tableName="Product">
+            <column name="name" value="Wall Art"/>
+            <column name="description" value="Modern wall art for interior design"/>
+            <column name="sku" value="WA54321"/>
+            <column name="price" valueNumeric="50.00"/>
+            <column name="quantity" valueNumeric="40"/>
+            <column name="category" value="Home Decor"/>
+        </insert>
+        <insert tableName="Product">
+            <column name="name" value="Curtains"/>
+            <column name="description" value="Elegant curtains for windows"/>
+            <column name="sku" value="CR87654"/>
+            <column name="price" valueNumeric="30.00"/>
+            <column name="quantity" valueNumeric="60"/>
+            <column name="category" value="Home Decor"/>
+        </insert>
+        <insert tableName="Product">
+            <column name="name" value="Chair"/>
+            <column name="description" value="Comfortable ergonomic chair for office use"/>
+            <column name="sku" value="CH98765"/>
+            <column name="price" valueNumeric="100.00"/>
+            <column name="quantity" valueNumeric="70"/>
+            <column name="category" value="Furniture"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
